@@ -1,5 +1,5 @@
 var weatherUrl =
-  'https://api.openweathermap.org/data/2.5/weather?q=Miechow&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
+  'https://api.openweathermap.org/data/2.5/weather?q=Sydney&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
 var request = new XMLHttpRequest();
 
 request.open('GET', weatherUrl, true);
@@ -9,6 +9,11 @@ request.onload = function() {
     console.log('All is ok');
     var data = JSON.parse(request.responseText);
     console.log(data);
+    var icon =
+      'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+    console.log(icon);
+    let siteIcon = document.getElementById('weather-icon');
+    document.getElementById('weather-icon').src = icon;
   } else {
     console.log('Server error');
   }
