@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 * { box-sizing: border-box; }
 
-:-ms-input-placeholder { font-family: 'Quicksand', sans-serif; }
+:-ms-input-placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
-::placeholder { font-family: 'Quicksand', sans-serif; }
+::placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
-body { font-family: 'Quicksand', sans-serif; }
+body { font-family: 'Quicksand', sans-serif; font-size: 30px; }
 
-button { font-family: 'Quicksand', sans-serif; margin: 10px; }
+button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 
 #cityNameInput { margin: 10px; }
 
