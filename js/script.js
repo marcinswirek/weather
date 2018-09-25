@@ -1,44 +1,43 @@
-// let city = document.getElementById('cityName').value;
-let city = 'Kraków';
-console.log(city);
-let weatherUrl =
-  'https://api.openweathermap.org/data/2.5/weather?q=' +
-  city +
-  '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
-let request = new XMLHttpRequest();
 
-request.open('GET', weatherUrl, true);
+let searchBtn = document.getElementById('searchBtn');
 
-request.onload = function() {
-  let data = JSON.parse(request.responseText);
-  let icon =
-    'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-  //let siteIcon = document.getElementById('weather-icon');
-  let temp = data.main.temp;
-  let weather = data.weather[0].main;
+function searchCities() {
+  let request = new XMLHttpRequest();
+  let cityNameInput = document.getElementById('cityNameInput').value;
+  let city = cityNameInput;
+  console.log(city);
+  let weatherUrl =
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
+    city +
+    '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
 
-  if (request.status >= 200 && request.status < 400) {
-    console.log('All is ok');
+  request.open('GET', weatherUrl, true);
 
-    console.log(data);
+  request.onload = function() {
+    let data = JSON.parse(request.responseText);
+    let icon =
+      'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+    let temp = Math.floor(data.main.temp);
+    let weather = data.weather[0].main;
 
-    document.getElementById('weather-icon').src = icon;
-    document.getElementById('temp').innerText = temp;
-    document.getElementById('weather').innerText = weather;
-  } else {
-    console.log('Server error');
-  }
-};
+    if (request.status >= 200 && request.status < 400) {
+      console.log('Server is ok');
 
-request.onerror = function() {
-  console.log('Connection error appeared');
-};
+      console.log(data);
 
-request.send();
+      document.getElementById('weather-icon').src = icon;
+      document.getElementById('temp').innerText = temp + ' °C';
+      document.getElementById('weather').innerText = weather;
+    } else {
+      console.log('Server error');
+    }
+  };
 
-// $.getJSON(
-//   'https://api.openweathermap.org/data/2.5/weather?q=Miechow&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99',
-//   function(data) {
-//     console.log(data);
-//   }
-// );
+  request.onerror = function() {
+    console.log('Connection error appeared');
+  };
+
+  request.send();
+}
+
+searchBtn.addEventListener('click', searchCities);

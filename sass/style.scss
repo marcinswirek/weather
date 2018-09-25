@@ -1,9 +1,37 @@
-// #weather-icon {
-//   widows: 100px;
-//   height: 100px;
-// }
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-// .weather-container {
-//   width: 200px;
-//   height: 200px;
-// }
+* {
+  box-sizing: border-box;
+  //border: 1px solid red;
+}
+
+::placeholder {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+button {
+  font-family: 'Quicksand', sans-serif;
+  margin: 10px;
+}
+
+#cityNameInput {
+  margin: 10px;
+}
+
+#weather-icon {
+  height: 100px;
+  width: 100px;
+  margin: 30px;
+}
+
+.weather-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
