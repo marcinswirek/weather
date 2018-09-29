@@ -1,4 +1,3 @@
-
 let searchBtn = document.getElementById('searchBtn');
 
 function searchCities() {
@@ -19,6 +18,7 @@ function searchCities() {
       'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
     let temp = Math.floor(data.main.temp);
     let weather = data.weather[0].main;
+    let wind = data.wind.speed;
 
     if (request.status >= 200 && request.status < 400) {
       console.log('Server is ok');
@@ -28,6 +28,7 @@ function searchCities() {
       document.getElementById('weather-icon').src = icon;
       document.getElementById('temp').innerText = temp + ' °C';
       document.getElementById('weather').innerText = weather;
+      document.getElementById('wind').innerText = wind + ' m/s';
     } else {
       console.log('Server error');
     }
