@@ -5,7 +5,7 @@
 
 ::placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
-body { font-family: 'Quicksand', sans-serif; font-size: 30px; }
+body { font-family: 'Quicksand', sans-serif; font-size: 30px; background-image: linear-gradient(yellow, orange); background-size: cover; background-repeat: no-repeat; height: 100vh; }
 
 button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 

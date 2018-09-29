@@ -13,6 +13,10 @@
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 30px;
+  background-image: linear-gradient(yellow, orange);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 button {
