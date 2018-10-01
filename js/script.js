@@ -1,6 +1,7 @@
-let searchBtn = document.getElementById('searchBtn');
+let currentWeatherBtn = document.getElementById('currentWeatherBtn');
+let fiveDaysWeatherBtn = document.getElementById('fiveDaysWeatherBtn');
 
-function searchCities() {
+function current() {
   let request = new XMLHttpRequest();
   let cityNameInput = document.getElementById('cityNameInput').value;
   let city = cityNameInput;
@@ -41,4 +42,47 @@ function searchCities() {
   request.send();
 }
 
-searchBtn.addEventListener('click', searchCities);
+function forecast() {
+  let requestForecast = new XMLHttpRequest();
+  let cityNameInput = document.getElementById('cityNameInput').value;
+  let city = cityNameInput;
+  console.log(city);
+  let weatherUrl =
+    'https://api.openweathermap.org/data/2.5/forecast?q=' +
+    city +
+    '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
+
+  requestForecast.open('GET', weatherUrl, true);
+
+  requestForecast.onload = function() {
+    let dataForecast = JSON.parse(requestForecast.responseText);
+    console.log(dataForecast);
+    // let icon =
+    //   'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
+    let temp = Math.floor(dataForecast.main.temp);
+    let weather = dataForecast.list.weather.description;
+    let wind = dataForecast.wind.speed;
+
+    if (requestForecast.status >= 200 && requestForecast.status < 400) {
+      console.log('Server is ok');
+
+      console.log(dataForecast);
+
+      document.getElementById('weather-icon').src = icon;
+      document.getElementById('temp').innerText = temp + ' °C';
+      document.getElementById('weather').innerText = weather;
+      document.getElementById('wind').innerText = wind + ' m/s';
+    } else {
+      console.log('Server error');
+    }
+  };
+
+  requestForecast.onerror = function() {
+    console.log('Connection error appeared');
+  };
+
+  requestForecast.send();
+}
+
+currentWeatherBtn.addEventListener('click', current);
+fiveDaysWeatherBtn.addEventListener('click', forecast);
