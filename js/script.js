@@ -19,7 +19,7 @@ function current() {
       'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
     let temp = Math.floor(data.main.temp);
     let weather = data.weather[0].main;
-    let wind = data.wind.speed;
+    let wind = Math.floor((data.wind.speed) * 3.6);
 
     if (request.status >= 200 && request.status < 400) {
       console.log('Server is ok');
@@ -29,7 +29,7 @@ function current() {
       document.getElementById('weather-icon').src = icon;
       document.getElementById('temp').innerText = temp + ' °C';
       document.getElementById('weather').innerText = weather;
-      document.getElementById('wind').innerText = wind + ' m/s';
+      document.getElementById('wind').innerText = wind + ' km/h';
     } else {
       console.log('Server error');
     }
@@ -59,19 +59,19 @@ function forecast() {
     console.log(dataForecast);
     // let icon =
     //   'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-    let temp = Math.floor(dataForecast.main.temp);
-    let weather = dataForecast.list.weather.description;
-    let wind = dataForecast.wind.speed;
+    let temp = Math.floor(dataForecast.list[15].main.temp);
+    //let weather = dataForecast.list.weather.description;
+    //let wind = dataForecast.wind.speed;
 
     if (requestForecast.status >= 200 && requestForecast.status < 400) {
       console.log('Server is ok');
 
       console.log(dataForecast);
 
-      document.getElementById('weather-icon').src = icon;
+      //document.getElementById('weather-icon').src = icon;
       document.getElementById('temp').innerText = temp + ' °C';
-      document.getElementById('weather').innerText = weather;
-      document.getElementById('wind').innerText = wind + ' m/s';
+      //document.getElementById('weather').innerText = weather;
+      //document.getElementById('wind').innerText = wind + ' m/s';
     } else {
       console.log('Server error');
     }
