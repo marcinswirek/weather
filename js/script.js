@@ -1,12 +1,12 @@
-let currentWeatherBtn = document.getElementById('currentWeatherBtn');
-let fiveDaysWeatherBtn = document.getElementById('fiveDaysWeatherBtn');
+const currentWeatherBtn = document.getElementById('currentWeatherBtn');
+const fiveDaysWeatherBtn = document.getElementById('fiveDaysWeatherBtn');
 
 function current() {
-  let request = new XMLHttpRequest();
-  let cityNameInput = document.getElementById('cityNameInput').value;
-  let city = cityNameInput;
+  const request = new XMLHttpRequest();
+  const cityNameInput = document.getElementById('cityNameInput').value;
+  const city = cityNameInput;
   console.log(city);
-  let weatherUrl =
+  const weatherUrl =
     'https://api.openweathermap.org/data/2.5/weather?q=' +
     city +
     '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
@@ -14,12 +14,12 @@ function current() {
   request.open('GET', weatherUrl, true);
 
   request.onload = function() {
-    let data = JSON.parse(request.responseText);
-    let icon =
+    const data = JSON.parse(request.responseText);
+    const icon =
       'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-    let temp = Math.floor(data.main.temp);
-    let weather = data.weather[0].main;
-    let wind = Math.floor((data.wind.speed) * 3.6);
+    const temp = Math.floor(data.main.temp);
+    const weather = data.weather[0].main;
+    const wind = Math.floor(data.wind.speed * 3.6);
 
     if (request.status >= 200 && request.status < 400) {
       console.log('Server is ok');
@@ -43,11 +43,11 @@ function current() {
 }
 
 function forecast() {
-  let requestForecast = new XMLHttpRequest();
-  let cityNameInput = document.getElementById('cityNameInput').value;
-  let city = cityNameInput;
+  const requestForecast = new XMLHttpRequest();
+  const cityNameInput = document.getElementById('cityNameInput').value;
+  const city = cityNameInput;
   console.log(city);
-  let weatherUrl =
+  const weatherUrl =
     'https://api.openweathermap.org/data/2.5/forecast?q=' +
     city +
     '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
@@ -55,13 +55,13 @@ function forecast() {
   requestForecast.open('GET', weatherUrl, true);
 
   requestForecast.onload = function() {
-    let dataForecast = JSON.parse(requestForecast.responseText);
+    const dataForecast = JSON.parse(requestForecast.responseText);
     console.log(dataForecast);
-    // let icon =
+    // const icon =
     //   'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-    let temp = Math.floor(dataForecast.list[15].main.temp);
-    //let weather = dataForecast.list.weather.description;
-    //let wind = dataForecast.wind.speed;
+    const temp = Math.floor(dataForecast.list[15].main.temp);
+    //const weather = dataForecast.list.weather.description;
+    //const wind = dataForecast.wind.speed;
 
     if (requestForecast.status >= 200 && requestForecast.status < 400) {
       console.log('Server is ok');

@@ -13,5 +13,5 @@ button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 
 #weather-icon { height: 100px; width: 100px; margin: 30px; }
 
-.weather-container { margin: auto; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; width: 30%; }
+.weather-container { margin: auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; width: 30%; }
 /*# sourceMappingURL=style.css.map */
