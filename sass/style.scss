@@ -15,16 +15,32 @@
 body {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
-  background-image: linear-gradient(yellow, orange);
+  background-image: url('../images/autumn.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  color: white;
+}
+
+main {
+  height: 100vh;
+  background-color: rgba(black, .9);
 }
 
 button {
   font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: 10px;
+  padding: 0 20px;
   font-size: 15px;
+  color: white;
+  line-height: 40px;
+  border: none;
+  border-radius: 3px;
+  background-color: transparent;
+  box-shadow: 0 0 4px 2px #ddd;
+  cursor: pointer;
 }
 
 #cityNameInput {
@@ -49,7 +65,7 @@ button {
   flex-direction: column;
 
   p {
-    padding-left: 30px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
   }

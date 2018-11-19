@@ -22,6 +22,7 @@ function current() {
     'https://api.openweathermap.org/data/2.5/weather?q=' +
     city +
     '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
+  document.querySelector('.city-name').innerText = city;
 
   request.open('GET', weatherUrl, true);
 
@@ -39,9 +40,15 @@ function current() {
       console.log(data);
 
       document.getElementById('weather-icon').src = icon;
-      document.getElementById('temp').innerText = `Current temperature: ${temp}°C`;
-      document.getElementById('weather').innerText = `Current conditions: ${weather}`;
-      document.getElementById('wind').innerText = `Current wind speed: ${wind}km/h`;
+      document.getElementById(
+        'temp'
+      ).innerText = `Current temperature: ${temp}°C`;
+      document.getElementById(
+        'weather'
+      ).innerText = `Current conditions: ${weather}`;
+      document.getElementById(
+        'wind'
+      ).innerText = `Current wind speed: ${wind}km/h`;
     } else {
       console.log('Server error');
     }
@@ -64,6 +71,7 @@ function forecast() {
     'https://api.openweathermap.org/data/2.5/forecast?q=' +
     city +
     '&units=metric&appid=672e93b94fcef6c0d2365b6ee1fe7e99';
+  document.querySelector('.city-name').innerText = city;
 
   requestForecast.open('GET', weatherUrl, true);
 
@@ -89,7 +97,7 @@ function forecast() {
       console.log(dataForecast);
 
       //document.getElementById('weather-icon').src = icon;
-      document.querySelector('#temp-forecast-6').innerText = temp6 + ' °C';
+      document.querySelector('#temp-forecast-6').innerText = `${temp6}°C`;
       document.querySelector('#temp-forecast-12').innerText = temp12 + ' °C';
       document.querySelector('#temp-forecast-18').innerText = temp18 + ' °C';
       document.querySelector('#temp-forecast-24').innerText = temp24 + ' °C';
