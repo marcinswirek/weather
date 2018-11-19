@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+ // border: 1px solid red;
 }
 
 ::placeholder {
@@ -12,7 +14,7 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   background-image: linear-gradient(yellow, orange);
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,5 +60,14 @@ button {
 
   p {
     padding-left: 25px;
+  }
+}
+
+.temp-container {
+  display: flex;
+  margin-top: 30px;
+
+  p {
+    padding: 0 20px;
   }
 }

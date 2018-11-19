@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
-* { box-sizing: border-box; border: 1px solid red; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :-ms-input-placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
 ::placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
-body { font-family: 'Quicksand', sans-serif; font-size: 30px; background-image: linear-gradient(yellow, orange); background-size: cover; background-repeat: no-repeat; height: 100vh; }
+body { font-family: 'Quicksand', sans-serif; font-size: 20px; background-image: linear-gradient(yellow, orange); background-size: cover; background-repeat: no-repeat; height: 100vh; }
 
 button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 
@@ -22,4 +22,8 @@ button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 .current-date-container { display: -ms-flexbox; display: flex; }
 
 .current-date-container p { padding-left: 25px; }
+
+.temp-container { display: -ms-flexbox; display: flex; margin-top: 30px; }
+
+.temp-container p { padding: 0 20px; }
 /*# sourceMappingURL=style.css.map */
