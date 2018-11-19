@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
-* { box-sizing: border-box; }
+* { box-sizing: border-box; border: 1px solid red; }
 
 :-ms-input-placeholder { font-family: 'Quicksand', sans-serif; font-size: 15px; }
 
@@ -13,5 +13,13 @@ button { font-family: 'Quicksand', sans-serif; margin: 10px; font-size: 15px; }
 
 #weather-icon { height: 100px; width: 100px; margin: 30px; }
 
-.weather-container { margin: auto; display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; width: 30%; }
+.weather-container { margin: auto; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-align: center; align-items: center; }
+
+.results-container { display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+
+.results-container p { padding-left: 30px; display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; }
+
+.current-date-container { display: -ms-flexbox; display: flex; }
+
+.current-date-container p { padding-left: 25px; }
 /*# sourceMappingURL=style.css.map */

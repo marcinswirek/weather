@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather Application</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-  <main>
-    <div class="weather-container">
-      <input type="text" value="" name="cityName" placeholder="Enter city name" id="cityNameInput">
-      <button id="currentWeatherBtn">Current weather</button>
-      <button id="fiveDaysWeatherBtn">Five days forecast</button>
-      <img src="" alt="" id="weather-icon">
-      <p id="weather"></p>
-      <p id="temp"></p>
-      <p id="wind"></p>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
-</body>
-
+  <body>
+    <main>
+      <div class="current-date-container">
+        <p class="date"></p>
+        <p class="time"></p>
+      </div>
+      <div class="weather-container">
+        <input
+          type="text"
+          value=""
+          name="cityName"
+          placeholder="Enter city name"
+          id="cityNameInput"
+        />
+        <button id="currentWeatherBtn">Current weather</button>
+        <button id="fiveDaysWeatherBtn">Five days forecast</button>
+        <img src="" alt="" id="weather-icon" />
+        <div class="results-container">
+          <p id="weather"></p>
+          <p id="temp"></p>
+          <p id="wind"></p>
+        </div>
+        <div class="forecast-container">
+          <p id="temp-forecast-3"></p>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -1,6 +1,17 @@
 const currentWeatherBtn = document.getElementById('currentWeatherBtn');
 const fiveDaysWeatherBtn = document.getElementById('fiveDaysWeatherBtn');
+//Current date and time display
+var today = new Date();
+var date =
+  today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time =
+  today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+var dateTime = date + ' ' + time;
+console.log(today);
+document.querySelector('.date').innerText = date;
+document.querySelector('.time').innerText = time;
 
+//Current weather display
 function current() {
   const request = new XMLHttpRequest();
   const cityNameInput = document.getElementById('cityNameInput').value;
@@ -27,9 +38,9 @@ function current() {
       console.log(data);
 
       document.getElementById('weather-icon').src = icon;
-      document.getElementById('temp').innerText = temp + ' °C';
-      document.getElementById('weather').innerText = weather;
-      document.getElementById('wind').innerText = wind + ' km/h';
+      document.getElementById('temp').innerText = `Temperature: ${temp}°C`;
+      document.getElementById('weather').innerText = `Conditions: ${weather}`;
+      document.getElementById('wind').innerText = `Wind speed: ${wind}km/h`;
     } else {
       console.log('Server error');
     }
@@ -42,6 +53,7 @@ function current() {
   request.send();
 }
 
+//Forecast display
 function forecast() {
   const requestForecast = new XMLHttpRequest();
   const cityNameInput = document.getElementById('cityNameInput').value;
@@ -59,7 +71,7 @@ function forecast() {
     console.log(dataForecast);
     // const icon =
     //   'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
-    const temp = Math.floor(dataForecast.list[15].main.temp);
+    const temp = Math.floor(dataForecast.list[1].main.temp);
     //const weather = dataForecast.list.weather.description;
     //const wind = dataForecast.wind.speed;
 
@@ -69,7 +81,7 @@ function forecast() {
       console.log(dataForecast);
 
       //document.getElementById('weather-icon').src = icon;
-      document.getElementById('temp').innerText = temp + ' °C';
+      document.getElementById('temp-forecast-3').innerText = temp + ' °C';
       //document.getElementById('weather').innerText = weather;
       //document.getElementById('wind').innerText = wind + ' m/s';
     } else {

@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  //border: 1px solid red;
+  border: 1px solid red;
 }
 
 ::placeholder {
@@ -38,7 +38,25 @@ button {
 .weather-container {
   margin: auto;
   display: flex;
-  //flex-direction: column;
+  flex-direction: column;
   align-items: center;
-  width: 30%;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.current-date-container {
+  display: flex;
+
+  p {
+    padding-left: 25px;
+  }
 }
