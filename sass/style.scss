@@ -39,7 +39,7 @@ button {
   border: none;
   border-radius: 3px;
   background-color: transparent;
-  box-shadow: 0 0 4px 2px #ddd;
+  box-shadow: 0 0 2px 2px #ddd;
   cursor: pointer;
 }
 
@@ -82,8 +82,13 @@ button {
 .temp-container {
   display: flex;
   margin-top: 30px;
+  visibility: hidden;
 
   p {
     padding: 0 20px;
   }
+}
+
+.city-name {
+  text-transform: uppercase;
 }

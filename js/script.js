@@ -1,5 +1,5 @@
-const currentWeatherBtn = document.getElementById('currentWeatherBtn');
-const fiveDaysWeatherBtn = document.getElementById('fiveDaysWeatherBtn');
+const currentWeatherBtn = document.querySelector('#currentWeatherBtn');
+const forecastBtn = document.querySelector('#forecastBtn');
 
 //Current date and time display
 const today = new Date();
@@ -15,7 +15,7 @@ document.querySelector('.time').innerText = time;
 //Current weather display
 function current() {
   const request = new XMLHttpRequest();
-  const cityNameInput = document.getElementById('cityNameInput').value;
+  const cityNameInput = document.querySelector('#cityNameInput').value;
   const city = cityNameInput;
   console.log(city);
   const weatherUrl =
@@ -39,15 +39,15 @@ function current() {
 
       console.log(data);
 
-      document.getElementById('weather-icon').src = icon;
-      document.getElementById(
-        'temp'
+      document.querySelector('#weather-icon').src = icon;
+      document.querySelector(
+        '#temp'
       ).innerText = `Current temperature: ${temp}°C`;
-      document.getElementById(
-        'weather'
+      document.querySelector(
+        '#weather'
       ).innerText = `Current conditions: ${weather}`;
-      document.getElementById(
-        'wind'
+      document.querySelector(
+        '#wind'
       ).innerText = `Current wind speed: ${wind}km/h`;
     } else {
       console.log('Server error');
@@ -64,7 +64,7 @@ function current() {
 //Forecast display
 function forecast() {
   const requestForecast = new XMLHttpRequest();
-  const cityNameInput = document.getElementById('cityNameInput').value;
+  const cityNameInput = document.querySelector('#cityNameInput').value;
   const city = cityNameInput;
   console.log(city);
   const weatherUrl =
@@ -98,13 +98,13 @@ function forecast() {
 
       //document.getElementById('weather-icon').src = icon;
       document.querySelector('#temp-forecast-6').innerText = `${temp6}°C`;
-      document.querySelector('#temp-forecast-12').innerText = temp12 + ' °C';
-      document.querySelector('#temp-forecast-18').innerText = temp18 + ' °C';
-      document.querySelector('#temp-forecast-24').innerText = temp24 + ' °C';
-      document.querySelector('#temp-forecast-30').innerText = temp30 + ' °C';
-      document.querySelector('#temp-forecast-36').innerText = temp36 + ' °C';
-      document.querySelector('#temp-forecast-42').innerText = temp42 + ' °C';
-      document.querySelector('#temp-forecast-48').innerText = temp48 + ' °C';
+      document.querySelector('#temp-forecast-12').innerText = `${temp12}°C`;
+      document.querySelector('#temp-forecast-18').innerText = `${temp18}°C`;
+      document.querySelector('#temp-forecast-24').innerText = `${temp24}°C`;
+      document.querySelector('#temp-forecast-30').innerText = `${temp30}°C`;
+      document.querySelector('#temp-forecast-36').innerText = `${temp36}°C`;
+      document.querySelector('#temp-forecast-42').innerText = `${temp42}°C`;
+      document.querySelector('#temp-forecast-48').innerText = `${temp48}°C`;
       //document.getElementById('weather').innerText = weather;
       //document.getElementById('wind').innerText = wind + ' m/s';
     } else {
@@ -120,4 +120,8 @@ function forecast() {
 }
 
 currentWeatherBtn.addEventListener('click', current);
-fiveDaysWeatherBtn.addEventListener('click', forecast);
+forecastBtn.addEventListener('click', forecast);
+forecastBtn.addEventListener('click', function() {
+  document.querySelector('.temp-container').style.visibility = 'visible';
+  console.log('Dziala');
+});
