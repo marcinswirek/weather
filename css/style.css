@@ -9,7 +9,7 @@ body { font-family: 'Quicksand', sans-serif; font-size: 20px; background-image: 
 
 main { height: 100vh; background-color: rgba(0, 0, 0, 0.9); }
 
-button { font-family: 'Quicksand', sans-serif; font-weight: 700; text-transform: uppercase; margin: 10px; padding: 0 20px; font-size: 15px; color: white; line-height: 40px; border: none; border-radius: 3px; background-color: transparent; box-shadow: 0 0 2px 2px #ddd; cursor: pointer; }
+button { font-family: 'Quicksand', sans-serif; font-weight: 700; text-transform: uppercase; margin: 10px; font-size: 15px; color: white; width: 200px; line-height: 40px; border: none; border-radius: 3px; background-color: transparent; box-shadow: 0 0 2px 2px #ddd; cursor: pointer; }
 
 #cityNameInput { margin: 10px; }
 
@@ -27,7 +27,11 @@ button { font-family: 'Quicksand', sans-serif; font-weight: 700; text-transform:
 
 .temp-container { display: -ms-flexbox; display: flex; margin-top: 30px; visibility: hidden; }
 
-.temp-container p { padding: 0 20px; }
+.temp-container p { padding: 10px 0; }
+
+.temp-item-container { border-left: 1px solid #ddd; text-align: center; padding: 0 30px; }
+
+.temp-item-container:last-child { border-right: 1px solid #ddd; }
 
 .city-name { text-transform: uppercase; }
 /*# sourceMappingURL=style.css.map */
