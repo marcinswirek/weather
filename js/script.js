@@ -2,15 +2,21 @@ const currentWeatherBtn = document.querySelector('#currentWeatherBtn');
 const forecastBtn = document.querySelector('#forecastBtn');
 
 //Current date and time display
-const today = new Date();
-const date =
-  today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-const time =
-  today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
-const dateTime = date + ' ' + time;
-// console.log(today);
-document.querySelector('.date').innerText = date;
-document.querySelector('.time').innerText = time;
+const clock = () => {
+  const today = new Date();
+  const date =
+    today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+  const hours =
+    today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+  const minutes =
+    today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+  const seconds =
+    today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+  document.querySelector('.date').innerText = date;
+  document.querySelector('.time').innerText = `${hours}:${minutes}:${seconds}`;
+};
+
+setInterval(clock, 1000);
 
 //Current weather display
 function current() {
